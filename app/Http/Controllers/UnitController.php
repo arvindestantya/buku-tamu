@@ -21,6 +21,17 @@ class UnitController extends Controller
         return response()->json($this->unitService->getAll());
     }
 
+    public function show($id)
+    {
+        $unit = $this->unitService->getById($id);
+
+        if (!$unit) {
+            return response()->json(['message' => 'Unit not found'], 404);
+        }
+
+        return response()->json($unit);
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([

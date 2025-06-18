@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Unit;
 use App\Repositories\UnitRepository;
 
 class UnitService
@@ -16,6 +17,11 @@ class UnitService
     public function getAll()
     {
         return $this->unitRepository->getAll();
+    }
+
+    public function getById($id)
+    {
+        return Unit::with(['guests', 'promotions'])->find($id);
     }
 
     public function store (array $data)

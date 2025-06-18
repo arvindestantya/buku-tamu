@@ -29,6 +29,7 @@ class GuestController extends Controller
             'email' => 'required|string|max:255',
             'category' => 'required|string|max:255',
             'purpose' => 'required|string|max:255',
+            'unit_id'=>'required',
         ]);
 
         $data['unit_id'] = $unit->id;

@@ -11,6 +11,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+
 Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
@@ -23,10 +24,12 @@ Route::get('/gerai/media-promosi', [PromotionController::class, 'index']);
 Route::middleware(['auth:sanctum'])->group(function () {
 
     // Logout
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/admin/logout', [AuthController::class, 'logout']);
 
     // Admin Only - dengan permission menggunakan Spatie
     Route::middleware('permission:view buku tamu')->group(function () {
+        Route::get('/admin/dashboard/', [UnitController::class, 'index']);
+        Route::get('/admin/dashboard/{unit}', [UnitController::class, 'show']);
         Route::get('/admin/buku-tamus', [GuestController::class, 'index']);
         Route::get('/admin/gerai/{unit}/buku-tamus', [UnitController::class, 'guests']);
     });
