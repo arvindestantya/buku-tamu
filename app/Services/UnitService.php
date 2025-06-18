@@ -27,4 +27,9 @@ class UnitService
     {
         return $this->unitRepository->getGuestByUnit($unitId);
     }
+    
+    public function getPromotion($unitId)
+    {
+        return $this->unitRepository->getPromotionByUnit($unitId);
+    }
 }

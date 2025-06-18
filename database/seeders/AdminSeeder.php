@@ -20,6 +20,7 @@ class AdminSeeder extends Seeder
         $permissions = [
             'view buku tamu',
             'create gerai',
+            // 'create promotion',
             // Tambah sesuai kebutuhan
         ];
 

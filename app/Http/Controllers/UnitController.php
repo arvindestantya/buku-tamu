@@ -35,4 +35,10 @@ class UnitController extends Controller
         $unit = Unit::with('guests')->findOrFail($id);
         return response()->json($unit->guests);
     }
+
+    public function promotions($id)
+    {
+        $unit = Unit::with('promotions')->findOrFail($id);
+        return response()->json($unit->promotions);
+    }
 }

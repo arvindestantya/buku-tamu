@@ -26,4 +26,9 @@ class UnitRepository
     {
         return Unit::with('guests')->findOrFail($unitId)->guest;
     }
+
+    public function getPromotionByUnit($unitId)
+    {
+        return Unit::with('promotions')->findOrFail($unitId)->promotion;
+    }
 }
