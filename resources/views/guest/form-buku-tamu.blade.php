@@ -22,8 +22,8 @@
     <div class="modal-content">
       <div class="modal-header ">
         <h5 class="modal-title" id="modalBukuTamuLabel">Selamat Datang di {{$unit->name}}</h5>
-        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-          <span>&times;</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form id="formBukuTamu" method="post">
@@ -36,7 +36,7 @@
           </div>
           <div class="form-group">
             <label for="hp">Nomor Handphone</label>
-            <input type="tel" class="form-control" id="hp" name="no_handphone" pattern="^(\+62|62|0)8[1-9][0-9]{7,12}$"
+            <input type="tel" class="form-control" id="hp" name="no_handphone" pattern="^(\\+62|62|0)8[1-9][0-9]{7,12}$"
        minlength="10"
        maxlength="15"
        required
